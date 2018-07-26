@@ -6,15 +6,15 @@ import Button from '@material-ui/core/Button';
 const styles = {
   loginButton: {
     backgroundColor: '#3DA56B',
-    color: 'white'
+    color: 'white',
   },
   forgotButton: {
     fontSize: '14px',
     fontColor: 'red',
     backgroundColor: 'transparent',
     borderWidth:'0px',
-    cursor: 'pointer'
-  }
+    cursor: 'pointer',
+  },
 }
 class Login extends Component {
   render() {

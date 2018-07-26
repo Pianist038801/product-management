@@ -14,13 +14,13 @@ import Notifier from '../../components/notifier'
 const styles = {
   addProduct: {
     backgroundColor: '#3DA56B',
-    color: 'white'
+    color: 'white',
   },
   tbHeader: {
     fontSize: '16px',
     fontColor: '#222222',
     fontFamily: 'Poppins-SemiBold',
-  }
+  },
 }
 
 class Main extends Component {
@@ -105,7 +105,7 @@ class Main extends Component {
           <div className='content'>
             <div className='title_header'>
               <span className='inventory'>Inventory management</span>
-              <Button onClick={()=>this.props.history.push('/')} variant="contained" className='addProduct' style={styles.addProduct}>
+              <Button onClick={()=>this.props.history.push('/add')} variant="contained" className='addProduct' style={styles.addProduct}>
                 Add product
               </Button>
             </div>
