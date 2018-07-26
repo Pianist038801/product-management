@@ -17,22 +17,21 @@ const notify_data = [
     }
 ]
 
-const Notifier = ({type}) =>
+const Notifier = ({type, destroy}) =>
 (
     <div>
-        <div className='notify_board'>
+        <div className='notify_board' style={{borderColor: notify_data[type].color}}>
             <span className='notify_text'>{notify_data[type].text}</span>
-            <img className='notify_close_icon' src={CloseIcon} alt='close'/>
+            <a>
+                <img className='notify_close_icon' src={CloseIcon} alt='close' onClick={destroy}/>
+            </a>
         </div>
     </div>
 )
 
 Notifier.propTypes = {
     type: PropTypes.number.isRequired,
+    destroy: PropTypes.func.isRequired,
 };
-
-Notifier.defaultProps = {
-    type: 0,
-}
 
 export default Notifier

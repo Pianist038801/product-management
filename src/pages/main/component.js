@@ -28,59 +28,37 @@ const styles = {
 class Main extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      products: [
-        {
-          code: '000',
-          name: 'really awesome apple',
-          stock: 35,
-          expiry_date: '3rd March 2019',
-          editStatus: true
-        },
-        {
-          code: '010',
-          name: 'really awesome apple',
-          stock: 15,
-          expiry_date: '3rd March 2019',
-          editStatus: false
-        }
-      ]
-    }
   }
 
   getColor = stock => (stock < 10) ? 'red' : (stock < 30 ? 'orange' : 'green')
 
-  saveProduct = (index) => {
-
-  }
-
-  renderTableCell = product => (
+  renderTableCell = (product, index) => (
     product.editStatus ?
-    <TableRow>
+    <TableRow key={index}>
       <TableCell>
         <div className='mark' style={{backgroundColor: this.getColor(product.stock)}}/>
       </TableCell>
       <TableCell>
-        <input value={this.state.newCode} className='editable' onChange={(e)=>this.setState({newCode:e.target.value})}/>
+        <input value={product.code} className='editable' onChange={(e)=>this.props.updateCurrent(index, {code: e.target.value})}/>
       </TableCell>
       <TableCell>
-        <input value={this.state.newCode} className='editable' onChange={(e)=>this.setState({newCode:e.target.value})}/>
+        <input value={product.name} className='editable' onChange={(e)=>this.props.updateCurrent(index, {name: e.target.value})}/>
       </TableCell>
       <TableCell>
-        <input value={this.state.newCode} className='editable' onChange={(e)=>this.setState({newCode:e.target.value})}/>
+        <input value={product.stock} className='editable' onChange={(e)=>this.props.updateCurrent(index, {stock: e.target.value})}/>
       </TableCell>
       <TableCell>
-        <input value={this.state.newCode} className='editable' onChange={(e)=>this.setState({newCode:e.target.value})}/>
+        <input value={product.expiry_date} className='editable' onChange={(e)=>this.props.updateCurrent(index, {expiry_date: e.target.value})}/>
       </TableCell>
       <TableCell>
         <div className='tblButtons'>
-          <a href='' className='saveBtn'>Save</a>
-          <a href='' className='delBtn'>Delete</a>
+          <a className='saveBtn' onClick={()=>this.props.saveProduct(index)}>Save</a>
+          <a className='saveBtn' onClick={()=>this.props.cancelUpdate(index)}>Cancel</a>
         </div>
       </TableCell>
     </TableRow>
     :
-    <TableRow>
+    <TableRow key={index}>
       <TableCell>
         <div className='mark' style={{backgroundColor: this.getColor(product.stock)}}/>
       </TableCell>
@@ -90,14 +68,16 @@ class Main extends Component {
       <TableCell>{product.expiry_date}</TableCell>
       <TableCell>
         <div className='tblButtons'>
-          <a href='' className='saveBtn'>Change</a>
-          <a href='' className='delBtn'>Delete</a>
+          <a className='saveBtn' onClick={()=>this.props.updateCurrent(index, {editStatus: true})}>Change</a>
+          <a className='delBtn' onClick={()=>this.props.deleteProduct(index)}>Delete</a>
         </div>
       </TableCell>
     </TableRow>
   )
 
   render() {
+    console.log('Products=', this.props.products);
+    console.log('Notification=', this.props.notifications);
     return (
       <div className='container'>
           <div className='header'>
@@ -113,9 +93,9 @@ class Main extends Component {
             </div>
             <a href='/' className='breadcrum'>Dashboard > </a>
             <a href='/main' className='breadcrum'>Inventory </a>
-            <Notifier/>
-            <Notifier/>
-            <Notifier/>
+            {this.props.notification.map((type, index)=>
+            <Notifier type={type} key={index} destroy={()=>{this.props.deleteNotification(index)}}/>)}
+            
             <Table className='tableView'>
               <TableHead>
                 <TableRow>
@@ -130,7 +110,7 @@ class Main extends Component {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {this.props.products.map(product => this.renderTableCell(product))}
+                {this.props.products.map((product, index) => this.renderTableCell(product, index))}
               </TableBody>
             </Table>
           </div>

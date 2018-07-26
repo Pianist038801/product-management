@@ -102,3 +102,7 @@
     border-width: 0px;
     font-size: 14px;
 }
+
+a {
+    cursor: pointer;
+}
