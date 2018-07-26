@@ -103,6 +103,12 @@
     font-size: 14px;
 }
 
+.notifyView {
+    position: absolute;
+    left: 32px;
+    bottom: 45px;
+}
+
 a {
     cursor: pointer;
 }

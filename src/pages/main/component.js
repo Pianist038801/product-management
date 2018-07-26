@@ -93,8 +93,18 @@ class Main extends Component {
             </div>
             <a href='/' className='breadcrum'>Dashboard > </a>
             <a href='/main' className='breadcrum'>Inventory </a>
-            {this.props.notification.map((type, index)=>
-            <Notifier type={type} key={index} destroy={()=>{this.props.deleteNotification(index)}}/>)}
+            <div className='notifyView'>
+              {
+                this.props.notification.map((type, index)=>
+                  <Notifier
+                    type={type}
+                    key={index}
+                    destroy={()=>{this.props.deleteNotification(index)}}
+                  />
+                )
+              }
+            </div>
+            
             
             <Table className='tableView'>
               <TableHead>
