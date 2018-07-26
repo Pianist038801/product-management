@@ -1,0 +1,104 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #F2F3F4;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: white;
+    padding-left: 32px;
+    padding-right: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    width: 154px;
+    height: 25px;
+}
+
+.header .profile_image {
+    width: 34px;
+    height: 34px;
+}
+
+.content {
+    padding-left: 32px;
+    padding-right: 22px;
+}
+
+.title_header {
+    left: 0;
+    right: 0;
+    height: 44px;
+    padding-top: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inventory {
+    width: 248px;
+    height: 28px;
+    font-family: Poppins-SemiBold;
+    font-size: 20px;
+    color: #222222;
+}
+
+.addProduct {
+    background: #3DA56B;
+    border-radius: 2px;
+    width: 145px;
+    height: 44px;
+}
+
+.breadcrum {
+    font-family: Poppins-Regular;
+    font-size: 12px;
+    color: #9B9B9B;
+}
+
+.tableView {
+    background: #FFFFFF;
+    box-shadow: 0 2px 15px 0 rgba(0,0,0,0.06);
+    border-radius: 6px;
+    margin-top: 27px;
+    max-width: 1036px;
+}
+
+.mark {
+    width: 19px;
+    height: 19px;
+    border-radius: 2px;
+    background-color: black;
+}
+
+.tblButtons {
+    display: flex;
+    justify-content: space-between
+}
+
+.saveBtn {
+    color: green;
+    margin-right: 10px;
+}
+
+.delBtn {
+    color: red;
+}
+
+.editable {
+    width: 100%;
+    padding: 0px;
+    border-width: 0px;
+    font-size: 14px;
+}

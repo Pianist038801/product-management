@@ -1,0 +1,31 @@
+.notify_color {
+    background: #E83A50;
+    border-radius: 4px 0 0 4px;
+    width: 14px;
+    height: 45px;
+}
+
+.notify_board {
+    height: 45px;
+    background: #303030;
+    border-radius: 4px;
+    border-left: 14px solid red;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.notify_text {
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    height: 20px;
+    display: inline-block;
+    margin: 13px;
+    color: #FFFFFF;
+}
+
+.notify_close_icon {
+    width: 14px;
+    height: 12px;
+    margin-right: 13px;
+    display: inline-block;
+}
