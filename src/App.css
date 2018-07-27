@@ -26,3 +26,23 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("fonts/Poppins-Regular.woff");
+}
+
+@font-face {
+  font-family: "Poppins-Medium";
+  src: url("fonts/Poppins-Medium.woff");
+}
+
+@font-face {
+  font-family: "Poppins-Light";
+  src: url("fonts/Poppins-Light.woff");
+}
+
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("fonts/Poppins-SemiBold.woff");
+}

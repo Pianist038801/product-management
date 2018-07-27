@@ -8,6 +8,8 @@ import Main from './pages/main'
 import AddPage from './pages/addPage'
 import reducer from './store/reducer'
 
+import './App.css'
+
 const store = createStore(reducer)
 
 class App extends Component {

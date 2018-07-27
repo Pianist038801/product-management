@@ -91,8 +91,8 @@ class Main extends Component {
                 Add product
               </Button>
             </div>
-            <a href='/' className='breadcrum'>Dashboard > </a>
-            <a href='/main' className='breadcrum'>Inventory </a>
+            <a className='breadcrum' onClick={()=>{this.props.history.push('/')}}>Dashboard > </a>
+            <a className='breadcrum'>Inventory </a>
             <div className='notifyView'>
               {
                 this.props.notification.map((type, index)=>

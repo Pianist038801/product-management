@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './style.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import backImg from '../../img/main_bg.png';
 
 const styles = {
   loginButton: {
@@ -21,6 +22,7 @@ class Login extends Component {
     return (
       <div className="login">
         <div className="bg">
+          <img className="img-bg" src={backImg} alt="background" />
           <div className='logo'/>
           <span className='title'>Inventory management software for growing businesses.</span>
           <span className='description'>Increase your sales and keep track of every unit.</span>
